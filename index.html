@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irsiyat Qonunlari — Klassik va Molekulyar Genetika Portali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigatsiya paneli -->
+<header class="navbar">
+    <div class="container nav-content">
+        <a href="#" class="logo">
+            <span class="dna-icon">🧬</span>
+            <span>GENETIKA<span class="accent">.UZ</span></span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#asoslar">Asosiy Tushunchalar</a>
+            <a href="#mendel">Mendel Qonunlari</a>
+            <a href="#morgan">Morgan va Xromosomalar</a>
+            <a href="#simulyator">Pennet Simulyatori</a>
+            <a href="#test">Bilimni Tekshirish</a>
+        </nav>
+        <div class="nav-actions">
+            <button id="themeToggle" class="icon-btn" title="Mavzuni o'zgartirish">🌙</button>
+            <button id="menuToggle" class="menu-btn">☰</button>
+        </div>
+    </div>
+</header>
+
+<!-- Hero (Asosiy kirish) qismi -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <span class="badge">Akademik Ta'lim Portali • Biologiya & Genetika</span>
+            <h1>Irsiyat Qonunlari va Genetik Mexanizmlar</h1>
+            <p>
+                Tirik organizmlarning o‘z belgi va xususiyatlarini avloddan-avlodga o‘tkazish qonuniyatlari,
+                Gregor Mendelning klassik tajribalari, Tomas Morganning irsiyat xromosoma nazariyasi va
+                molekulyar darajadagi irsiy axborot uzatilishining to‘liq ilmiy tahlili.
+            </p>
+            <div class="hero-buttons">
+                <a href="#mendel" class="btn btn-primary">Qonunlarni O‘rganish</a>
+                <a href="#simulyator" class="btn btn-outline">Pennet Katagi Simulyatori</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>3 ta</strong>
+                    <span>Mendel asosiy qonuni</span>
+                </div>
+                <div class="stat-item">
+                    <strong>46 ta</strong>
+                    <span>Inson xromosomalari</span>
+                </div>
+                <div class="stat-item">
+                    <strong>1865-yil</strong>
+                    <span>Genetika fani tamal toshi</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="dna-card">
+                <div class="card-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="mono-title">DNK_STRUKTURA_MODELI.sim</span>
+                </div>
+                <canvas id="dnaCanvas" width="380" height="320"></canvas>
+                <div class="card-footer">
+                    <span>Komplementarlik: <strong>A = T</strong>, <strong>G ≡ C</strong></span>
+                    <span class="status-live">● Faol animatsiya</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 1. Asosiy Genetik Tushunchalar -->
+<section id="asoslar" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">01. Terminologiya va Asoslar</span>
+            <h2>Genetikaning Fundamental Tushunchalari</h2>
+            <p>Irsiyat qonunlarini chuqur tushunish uchun genetik tahlilda qo‘llaniladigan asosiy ilmiy atamalarni bilish zarur.</p>
+        </div>
+
+        <div class="concepts-grid">
+            <div class="concept-card">
+                <div class="concept-icon">🧬</div>
+                <h3>Irsiyat va O‘zgaruvchanlik</h3>
+                <p><strong>Irsiyat</strong> — organizmlarning o‘z belgi va rivojlanish xususiyatlarini kelgusi avlodlarga o‘tkazish qobiliyati. <strong>O‘zgaruvchanlik</strong> esa organizmlarning yangi belgilar hosil qilish xususiyatidir.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🔬</div>
+                <h3>Gen va Allellar</h3>
+                <p><strong>Gen</strong> — DNK molekulasining ma’lum bir oqsil yoki RNK sinteziga javobgar qismi. <strong>Allel genlar</strong> — gomologik xromosomalarning bir xil lokuslarida joylashgan, muqobil belgilarni belgilovchi genlar.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">⚖️</div>
+                <h3>Dominant va Retsessivlik</h3>
+                <p><strong>Dominant gen (A)</strong> — geterozigota holatda ham o‘z belgisini namoyon qiluvchi ustun gen. <strong>Retsessiv gen (a)</strong> — faqat gomozigota holatda (aa) yuzaga chiquvchi yashirin gen.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🧪</div>
+                <h3>Genotip va Fenotip</h3>
+                <p><strong>Genotip</strong> — organizmdagi barcha genlar yig‘indisi (masalan, <code>AA</code>, <code>Aa</code>, <code>aa</code>). <strong>Fenotip</strong> — organizmning tashqi va ichki belgilari majmuasi (masalan, sariq rang).</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🔗</div>
+                <h3>Gomozigota va Geterozigota</h3>
+                <p><strong>Gomozigota</strong> — bir xil allellarga ega organizm (<code>AA</code> yoki <code>aa</code>), avlodda ajralish bermaydi. <strong>Geterozigota</strong> — har xil allelli organizm (<code>Aa</code>), avlodda belgi ajralishini beradi.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">📊</div>
+                <h3>Gibridologik Metod</h3>
+                <p>Gregor Mendel tomonidan ishlab chiqilgan usul: bir-biridan aniq muqobil belgilari bilan farq qiluvchi toza liniyalarni chatishtirish va har bir belgi irsiylanishini alohida matematik tahlil qilish.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. Gregor Mendel Qonunlari -->
+<section id="mendel" class="section bg-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">02. Klassik Genetika</span>
+            <h2>Gregor Mendelning Irsiyat Qonunlari</h2>
+            <p>1856–1863-yillarda no‘xat o‘simligi (<em>Pisum sativum</em>) ustida o‘tkazilgan 10 000 dan ortiq tajriba natijasida kashf etilgan fundamental qonunlar.</p>
+        </div>
+
+        <!-- Tab Tugmalari -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="law1">I Qonun: Bir xillik qonuni</button>
+            <button class="tab-btn" data-tab="law2">II Qonun: Ajralish qonuni</button>
+            <button class="tab-btn" data-tab="law3">III Qonun: Mustaqil taqsimlanish</button>
+            <button class="tab-btn" data-tab="exceptions">Noallel va Chala Dominantlik</button>
+        </div>
+
+        <!-- Tab Kontentlari -->
+        <div class="tab-content active" id="law1">
+            <div class="law-box">
+                <div class="law-info">
+                    <span class="law-badge">Monoduragay chatishtirish • F₁ avlodi</span>
+                    <h3>Mendelning Birinchi Qonuni (Birinchi avlod duragaylarining bir xillik qonuni)</h3>
+                    <p class="law-formula-text">
+                        <strong>Ta'rifi:</strong> Bir-biridan bir juft muqobil (alternativ) belgilari bilan farq qiluvchi gomozigota ota-ona organizmlar chatishtirilganda, birinchi avlod (F₁) duragaylarining barchasi ham fenotip, ham genotip jihatidan bir xil bo‘ladi va ularda faqat dominant belgi namoyon bo‘ladi.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Ota-ona (P):</strong> Sariq silliq urug‘li no‘xat (<code>AA</code>) × Yashil urug‘li no‘xat (<code>aa</code>)</li>
+                        <li><strong>Gametalar (G):</strong> <code>A</code> va <code>a</code></li>
+                        <li><strong>Birinchi avlod (F₁):</strong> 100% <code>Aa</code> (barchasi sariq rangli geterozigotalar)</li>
+                        <li><strong>Sitologik asosi:</strong> Meyoz jarayonida gomologik xromosomalarning tarqalishi natijasida har bir gametaga faqat bitta allel gen o‘tadi.</li>
+                    </ul>
+                </div>
+                <div class="law-diagram">
+                    <h4>Chatishtirish Sxemasi (P → F₁)</h4>
+                    <div class="scheme-box">
+                        <div class="scheme-row">
+                            <span class="label">P:</span>
+                            <span class="allele dom">♀ AA (Sariq)</span>
+                            <span class="cross">×</span>
+                            <span class="allele rec">♂ aa (Yashil)</span>
+                        </div>
+                        <div class="scheme-row">
+                            <span class="label">G:</span>
+                            <span class="gamete">(A)</span>
+                            <span class="gamete">(a)</span>
+                        </div>
+                        <div class="scheme-arrow">↓</div>
+                        <div class="scheme-row">
+                            <span class="label">F₁:</span>
+                            <span class="allele het">100% Aa (Barchasi Sariq)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="law2">
+            <div class="law-box">
+                <div class="law-info">
+                    <span class="law-badge">Monoduragay chatishtirish • F₂ avlodi</span>
+                    <h3>Mendelning Ikkinchi Qonuni (Belgilarning ajralish qonuni)</h3>
+                    <p class="law-formula-text">
+                        <strong>Ta'rifi:</strong> Birinchi avlod geterozigota duragaylari (<code>Aa</code>) o‘zaro chatishtirilganda, ikkinchi avlodda (F₂) belgilarning ajralishi yuz beradi: fenotip bo‘yicha <strong>3 : 1</strong> (3 qism dominant, 1 qism retsessiv), genotip bo‘yicha esa <strong>1 : 2 : 1</strong> nisbatda taqsimlanadi.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Ota-ona (F₁):</strong> <code>Aa</code> (Sariq) × <code>Aa</code> (Sariq)</li>
+                        <li><strong>Gametalar (G):</strong> Har bir organizm 50% <code>A</code> va 50% <code>a</code> gameta hosil qiladi.</li>
+                        <li><strong>Fenotipik nisbat (F₂):</strong> 75% Sariq (3) : 25% Yashil (1)</li>
+                        <li><strong>Genotipik nisbat (F₂):</strong> 25% <code>AA</code> (1) : 50% <code>Aa</code> (2) : 25% <code>aa</code> (1)</li>
+                        <li><strong>Gametalar sofligi gipotezasi:</strong> Geterozigota organizmda dominant va retsessiv genlar bir-biri bilan aralashib ketmaydi, gametalar hosil bo‘lishida sof holda ajraladi.</li>
+                    </ul>
+                </div>
+                <div class="law-diagram">
+                    <h4>F₂ Avlod Taqsimoti</h4>
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>Gametalar</th>
+                            <th>♂ A (50%)</th>
+                            <th>♂ a (50%)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>♀ A (50%)</strong></td>
+                            <td class="cell-dom"><strong>AA</strong><br><small>Sariq (25%)</small></td>
+                            <td class="cell-het"><strong>Aa</strong><br><small>Sariq (25%)</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>♀ a (50%)</strong></td>
+                            <td class="cell-het"><strong>Aa</strong><br><small>Sariq (25%)</small></td>
+                            <td class="cell-rec"><strong>aa</strong><br><small>Yashil (25%)</small></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="law3">
+            <div class="law-box">
+                <div class="law-info">
+                    <span class="law-badge">Diduragay chatishtirish • F₂ avlodi</span>
+                    <h3>Mendelning Uchinchi Qonuni (Belgilarning mustaqil holda taqsimlanish qonuni)</h3>
+                    <p class="law-formula-text">
+                        <strong>Ta'rifi:</strong> Bir-biridan ikki yoki undan ortiq juft muqobil belgilari bilan farq qiluvchi gomozigota organizmlar chatishtirilganda, F₂ avlodda har bir juft belgi boshqa juft belgilardan mustaqil ravishda irsiylanadi va yangi kombinatsiyalar (rekombinatsiyalar) hosil qiladi.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Belgilar:</strong> <code>A</code> — sariq, <code>a</code> — yashil; <code>B</code> — silliq, <code>b</code> — burishgan.</li>
+                        <li><strong>P:</strong> <code>AABB</code> (Sariq silliq) × <code>aabb</code> (Yashil burishgan)</li>
+                        <li><strong>F₁:</strong> 100% <code>AaBb</code> (Digeterozigota, sariq silliq). 4 xil gameta beradi: <code>AB</code>, <code>Ab</code>, <code>aB</code>, <code>ab</code>.</li>
+                        <li><strong>F₂ Fenotipik nisbat:</strong> <strong>9 : 3 : 3 : 1</strong> (9 sariq silliq : 3 sariq burishgan : 3 yashil silliq : 1 yashil burishgan).</li>
+                        <li><strong>Sharti:</strong> Genlar no-gomologik (har xil juft) xromosomalarda joylashgan bo‘lishi shart!</li>
+                    </ul>
+                </div>
+                <div class="law-diagram">
+                    <h4>F₂ Fenotipik Guruhlar (16 ta kombinatsiya)</h4>
+                    <div class="ratio-bars">
+                        <div class="bar-item">
+                            <div class="bar-label"><span>A_B_ (Sariq, silliq)</span><strong>9 / 16 (56.25%)</strong></div>
+                            <div class="bar-track"><div class="bar-fill" style="width: 56.25%;"></div></div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label"><span>A_bb (Sariq, burishgan)</span><strong>3 / 16 (18.75%)</strong></div>
+                            <div class="bar-track"><div class="bar-fill secondary" style="width: 18.75%;"></div></div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label"><span>aaB_ (Yashil, silliq)</span><strong>3 / 16 (18.75%)</strong></div>
+                            <div class="bar-track"><div class="bar-fill secondary" style="width: 18.75%;"></div></div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label"><span>aabb (Yashil, burishgan)</span><strong>1 / 16 (6.25%)</strong></div>
+                            <div class="bar-track"><div class="bar-fill accent-fill" style="width: 6.25%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="exceptions">
+            <div class="law-box">
+                <div class="law-info">
+                    <span class="law-badge">Mendel qonunlaridan chetlanishlar</span>
+                    <h3>Chala Dominantlik, Kodominantlik va Noallel Genlar Ta'siri</h3>
+                    <p class="law-formula-text">
+                        Tabiatda barcha belgilar ham to‘liq dominantlik asosida irsiylanmaydi. Ba’zan geterozigota holatda oraliq belgi yuzaga chiqadi yoki bir belgini bir nechta genlar boshqaradi.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Chala dominantlik:</strong> Namozshomgul o‘simligida qizil (<code>AA</code>) va oq (<code>aa</code>) gul chatishtirilganda F₁ da 100% pushti (<code>Aa</code>) gul olinadi. F₂ da fenotip va genotip nisbati bir xil: <strong>1 : 2 : 1</strong>.</li>
+                        <li><strong>Kodominantlik:</strong> Ikkala allel ham mustaqil namoyon bo‘ladi. Masalan, insonlarda IV qon guruhi (<code>IᴬIᴮ</code>).</li>
+                        <li><strong>Komplementarlik (To‘ldiruvchi ta’sir):</strong> Ikki dominant noallel gen birgalikda yangi belgi chiqaradi (masalan, xushbo‘y hidli no‘xatda <code>9 : 7</code> nisbat).</li>
+                        <li><strong>Epistaz va Polimeriya:</strong> Bir gen boshqa genni bo‘g‘ib qo‘yishi (epistaz) yoki bir nechta genlarning bir belgini kuchaytirishi (polimeriya — inson terisi rangi).</li>
+                    </ul>
+                </div>
+                <div class="law-diagram">
+                    <h4>Qisqacha Taqqoslash Jadvali</h4>
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>Irsiylanish turi</th>
+                            <th>F₂ Fenotip nisbati</th>
+                            <th>Misol</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>To‘liq dominantlik</td>
+                            <td>3 : 1</td>
+                            <td>No‘xat urug‘i rangi</td>
+                        </tr>
+                        <tr>
+                            <td>Chala dominantlik</td>
+                            <td>1 : 2 : 1</td>
+                            <td>Namozshomgul guli</td>
+                        </tr>
+                        <tr>
+                            <td>Komplementarlik</td>
+                            <td>9 : 7 yoki 9 : 3 : 4</td>
+                            <td>Tovuq toji shakli</td>
+                        </tr>
+                        <tr>
+                            <td>Polimeriya</td>
+                            <td>15 : 1</td>
+                            <td>Bug‘doy doni rangi</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Tomas Morgan va Irsiyatning Xromosoma Nazariyasi -->
+<section id="morgan" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">03. Sitogenetika va Birikkan Irsiylanish</span>
+            <h2>Tomas Morgan Qonuni va Krossingover</h2>
+            <p>1910–1915-yillarda drozofila meva pashshasi (<em>Drosophila melanogaster</em>) ustida olib borilgan tadqiqotlar asosida yaratilgan irsiyatning xromosoma nazariyasi.</p>
+        </div>
+
+        <div class="morgan-grid">
+            <div class="morgan-main">
+                <h3>Birikkan Irsiylanish Qonuni</h3>
+                <p>
+                    Agar genlar bitta xromosomada joylashgan bo‘lsa, ular Mendelning uchinchi qonuniga bo‘ysunmaydi, balki ko‘pincha <strong>birgalikda (birikkan holda)</strong> nasldan-naslga o‘tadi. Bitta xromosomadagi barcha genlar <strong>birikish guruhini</strong> tashkil etadi (uning soni gaploid xromosomalar to‘plamiga teng: insonda 23 ta, drozofilada 4 ta).
+                </p>
+                <div class="highlight-box">
+                    <h4>🧬 Krossingover va Morganida (cM)</h4>
+                    <p>
+                        Meyozning profaza I bosqichida gomologik xromosomalar o‘zaro chalishtirilib, o‘xshash qismlari bilan almashadi — bu <strong>krossingover</strong> deyiladi. Genlar orasidagi masofa qanchalik uzoq bo‘lsa, krossingover ehtimoli shuncha yuqori bo‘ladi. Genlar orasidagi masofa <strong>morganida (1% krossingover = 1 morganida)</strong> birligida o‘lchanadi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="morgan-rules">
+                <h3>Xromosoma Nazariyasining 5 Asosiy Qoidasi</h3>
+                <ol class="numbered-list">
+                    <li>Genlar xromosomalarda chiziqli ketma-ketlikda joylashgan.</li>
+                    <li>Har bir gen xromosomada o‘zining qat’iy belgilangan o‘rniga (<strong>lokus</strong>iga) ega.</li>
+                    <li>Bitta xromosomadagi genlar birikish guruhini hosil qiladi va birga irsiylanadi.</li>
+                    <li>Gomologik xromosomalar orasida krossingover tufayli allel genlar almashinuvi sodir bo‘ladi.</li>
+                    <li>Krossingover foizi genlar orasidagi masofaga to‘g‘ri proporsionaldir.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Interaktiv Pennet Katagi Simulyatori -->
+<section id="simulyator" class="section bg-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">04. Interaktiv Laboratoriya</span>
+            <h2>Pennet Katagi (Punnett Square) Simulyatori</h2>
+            <p>Ota-ona genotiplarini tanlang va avlodda kutilayotgan genotip hamda fenotip nisbatlarini real vaqtda hisoblang.</p>
+        </div>
+
+        <div class="simulator-wrapper">
+            <div class="sim-controls">
+                <div class="control-group">
+                    <label for="crossType">Chatishtirish turi:</label>
+                    <select id="crossType">
+                        <option value="mono">Monoduragay chatishtirish (1 ta belgi: A/a)</option>
+                        <option value="di">Diduragay chatishtirish (2 ta belgi: A/a, B/b)</option>
+                    </select>
+                </div>
+
+                <div class="parents-row">
+                    <div class="control-group">
+                        <label for="parent1">Ona genotipi (♀):</label>
+                        <select id="parent1"></select>
+                    </div>
+                    <div class="cross-symbol">×</div>
+                    <div class="control-group">
+                        <label for="parent2">Ota genotipi (♂):</label>
+                        <select id="parent2"></select>
+                    </div>
+                </div>
+
+                <div class="legend-box">
+                    <p><strong>Belgilar sharti:</strong></p>
+                    <p>• <code>A</code> — Sariq rang (dominant), <code>a</code> — Yashil rang (retsessiv)</p>
+                    <p>• <code>B</code> — Silliq shakl (dominant), <code>b</code> — Burishgan shakl (retsessiv)</p>
+                </div>
+
+                <button id="calculateBtn" class="btn btn-primary full-width">Natijani Hisoblash</button>
+            </div>
+
+            <div class="sim-output">
+                <div class="punnett-container">
+                    <h4>Pennet Katagi Jadvali</h4>
+                    <div id="punnettGrid" class="punnett-table-wrap"></div>
+                </div>
+
+                <div class="results-summary">
+                    <div class="res-card">
+                        <h4>Genotipik Nisbat</h4>
+                        <ul id="genotypeStats" class="stats-list"></ul>
+                    </div>
+                    <div class="res-card">
+                        <h4>Fenotipik Nisbat</h4>
+                        <ul id="phenotypeStats" class="stats-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Bilimni Tekshirish (Interaktiv Test) -->
+<section id="test" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">05. O‘z-o‘zini Baholash</span>
+            <h2>Genetika Bo‘yicha Akademik Test</h2>
+            <p>O‘rgangan bilimlaringizni 6 ta ilmiy savol orqali sinab ko‘ring va batafsil tushuntirishlarga ega bo‘ling.</p>
+        </div>
+
+        <div class="quiz-box">
+            <div class="quiz-header">
+                <span id="questionCounter">Savol 1 / 6</span>
+                <span id="scoreDisplay">Ball: 0</span>
+            </div>
+            <div class="progress-bar">
+                <div id="quizProgress" class="progress-fill" style="width: 16.6%;"></div>
+            </div>
+
+            <div id="quizContent">
+                <h3 id="questionText">Savol yuklanmoqda...</h3>
+                <div id="optionsList" class="options-grid"></div>
+                <div id="explanationBox" class="explanation hidden"></div>
+                <div class="quiz-footer">
+                    <button id="nextQuestionBtn" class="btn btn-primary hidden">Keyingi savol →</button>
+                </div>
+            </div>
+
+            <div id="quizResult" class="quiz-result hidden">
+                <h3>Test Yakunlandi!</h3>
+                <p id="finalScoreText"></p>
+                <button id="restartQuizBtn" class="btn btn-primary">Qaytadan topshirish</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-content">
+        <div>
+            <a href="#" class="logo">
+                <span class="dna-icon">🧬</span>
+                <span>GENETIKA<span class="accent">.UZ</span></span>
+            </a>
+            <p class="footer-desc">
+                Irsiyat qonunlari, klassik Mendel genetikasi va zamonaviy sitogenetika asoslarini
+                chuqur o‘rganishga mo‘ljallangan interaktiv ilmiy-ta’lim platformasi.
+            </p>
+        </div>
+        <div class="footer-links">
+            <h4>Bo‘limlar</h4>
+            <a href="#asoslar">Genetik Atamalar</a>
+            <a href="#mendel">Mendel Qonunlari</a>
+            <a href="#morgan">Morgan Nazariyasi</a>
+            <a href="#simulyator">Pennet Simulyatori</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Genetika.uz — Barcha ilmiy ma’lumotlar akademik biologiya dasturi asosida tayyorlangan.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
